@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Gravity Kabupaten Kediri</title>
+
+    <!-- CSS Sendiri -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <!-- =========================
+         SLIDE 1 : BERANDA
+    ========================== -->
+    <section id="beranda">
+
+    <div class="overlay"></div>
+
+    <div class="hero">
+
+            <h1>
+                Analisis Daerah dengan Interaksi Tinggi di Kabupaten Kediri Menggunakan Gravity Model
+            </h1>
+
+            <p>
+                WebGIS Analisis Interaksi Antar Kecamatan
+                di Wilayah Kabupaten Kediri
+            </p>
+
+            <a href="#latar-belakang" class="btn">
+                Mulai Eksplorasi
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SLIDE 2 : LATAR BELAKANG
+    ========================== -->
+    <section id="latar-belakang">
+
+        <div class="latar-container">
+
+            <h2>Latar Belakang</h2>
+
+            <p>
+                Kabupaten Kediri memiliki tingkat perkembangan wilayah
+                yang berbeda pada setiap kecamatan. Perbedaan jumlah
+                penduduk, aktivitas ekonomi, dan aksesibilitas
+                menyebabkan adanya pusat-pusat pertumbuhan yang memiliki
+                pengaruh lebih besar dibandingkan wilayah lainnya.
+            </p>
+
+            <p>
+                Oleh karena itu, diperlukan analisis interaksi
+                antarwilayah menggunakan Gravity Model untuk mengetahui
+                tingkat keterkaitan antar kecamatan dan menentukan pusat
+                pertumbuhan wilayah di Kabupaten Kediri.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>📊 Data Penduduk</h3>
+                    <p>
+                        Data jumlah penduduk digunakan untuk menghitung
+                        besarnya interaksi antarwilayah.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📍 Jarak Antar Kecamatan</h3>
+                    <p>
+                        Data jarak antar kecamatan digunakan sebagai
+                        faktor penghambat dalam perhitungan Gravity Model.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🏢 Jumlah Fasilitas</h3>
+                    <p>
+                        Data fasilitas digunakan untuk menunjukkan
+                        tingkat pelayanan dan daya tarik setiap kecamatan.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Visualisasi WebGIS</h3>
+                    <p>
+                        Hasil analisis disajikan dalam bentuk WebGIS
+                        interaktif.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SLIDE 3 : BATAS ADMINISTRASI
+    ========================== -->
+    <section id="batas-administrasi">
+
+        <div class="map-container">
+
+            <h2>Peta Batas Administrasi Kabupaten Kediri</h2>
+
+            <div id="map1"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SLIDE 4 : GARIS INTERAKSI
+    ========================== -->
+    <section id="garis-interaksi">
+
+        <div class="map-container">
+
+            <h2>Peta Garis Interaksi Antar Kecamatan</h2>
+
+            <div id="map2"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SLIDE 5 : RANKING INTERAKSI
+    ========================== -->
+    <section id="ranking-interaksi">
+
+        <div class="map-container">
+
+            <h2>Peta Ranking Interaksi Kecamatan</h2>
+
+            <div id="map3"></div>
+
+        </div>
+
+    </section>
+
+<!-- =========================
+     SLIDE 6 : KESIMPULAN
+========================= -->
+<section id="kesimpulan">
+
+    <div class="kesimpulan-container">
+
+        <h2>Kesimpulan Analisis Gravity Model</h2>
+
+        <div class="cards-kesimpulan">
+
+            <div class="card-kesimpulan">
+                <h3>🥇 Pusat Pertumbuhan Utama</h3>
+                <p>
+                    Kecamatan Pare merupakan pusat pertumbuhan utama
+                    Kabupaten Kediri berdasarkan nilai interaksi
+                    tertinggi antarwilayah.
+                </p>
+            </div>
+
+            <div class="card-kesimpulan">
+                <h3>📊 Lima Kecamatan Teratas</h3>
+                <p>
+                    Pare, Gurah, Wates, Plosoklaten, dan Kepung
+                    merupakan kecamatan dengan tingkat interaksi
+                    tertinggi di Kabupaten Kediri.
+                </p>
+            </div>
+
+            <div class="card-kesimpulan">
+                <h3>🌐 Pola Interaksi Wilayah</h3>
+                <p>
+                    Interaksi wilayah cenderung terkonsentrasi pada
+                    kawasan tengah dan timur Kabupaten Kediri sehingga
+                    membentuk pusat-pusat pelayanan yang dominan.
+                </p>
+            </div>
+
+            <div class="card-kesimpulan">
+                <h3>💡 Implikasi Perencanaan</h3>
+                <p>
+                    Kecamatan dengan interaksi tinggi berpotensi
+                    dikembangkan sebagai pusat pelayanan, pusat
+                    perdagangan, dan simpul pengembangan wilayah
+                    Kabupaten Kediri.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="penutup">
+            <h3>Terima Kasih</h3>
+            <p>
+                WebGIS Analisis Pusat Pertumbuhan Wilayah Berdasarkan
+                Gravity Model di Kabupaten Kediri
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =========================
+         LEAFLET JS
+    ========================== -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+
+        /* =====================
+           MAP 1
+           BATAS ADMINISTRASI
+        ===================== */
+
+        var map1 = L.map('map1').setView([-7.816, 112.011], 10);
+
+        L.tileLayer(
+            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            {
+                attribution: '&copy; OpenStreetMap &copy; CARTO'
+            }
+        ).addTo(map1);
+
+fetch('data/Batas Administrasi Kediri.geojson')
+    .then(response => response.json())
+    .then(data => {
+
+        var batas = L.geoJSON(data, {
+
+            style: {
+                color: "#1e3a8a",
+                weight: 2,
+                fillColor: "#93c5fd",
+                fillOpacity: 0.4
+            },
+
+            onEachFeature: function (feature, layer) {
+
+                layer.bindPopup(
+                    "<h3>" +
+                    feature.properties.Kecamatan +
+                    "</h3>"
+                );
+
+                layer.on({
+
+                    mouseover: function (e) {
+                        e.target.setStyle({
+                            fillColor: "#2563eb",
+                            fillOpacity: 0.7,
+                            weight: 3
+                        });
+                    },
+
+                    mouseout: function (e) {
+                        batas.resetStyle(e.target);
+                    }
+
+                });
+
+            }
+
+        }).addTo(map1);
+
+        map1.fitBounds(batas.getBounds());
+        var legend = L.control({
+    position: 'bottomright'
+});
+
+legend.onAdd = function () {
+
+    var div = L.DomUtil.create('div', 'legend');
+
+    div.innerHTML =
+        '<b>Legenda</b><br>' +
+        '<i></i> Batas Administrasi Kecamatan';
+
+    return div;
+};
+
+legend.addTo(map1);
+
+    });
+        /* =====================
+           MAP 2
+           GARIS INTERAKSI
+        ===================== */
+
+        var map2 = L.map('map2').setView([-7.816, 112.011], 10);
+
+        L.tileLayer(
+            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            {
+                attribution: '&copy; OpenStreetMap &copy; CARTO'
+            }
+        ).addTo(map2);
+
+fetch('data/Batas Administrasi Kediri.geojson')
+    .then(response => response.json())
+    .then(data => {
+
+        L.geoJSON(data, {
+            sstyle: {
+    color: "#94a3b8",
+    weight: 1,
+    fillColor: "#e2e8f0",
+    fillOpacity: 0.15
+}
+        }).addTo(map2);
+
+    });
+   fetch('data/Garis_Interaksi.geojson')
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+        var garis = L.geoJSON(data, {
+
+    style: function(feature) {
+
+    var nilai = parseFloat(feature.properties.Interaksi);
+
+    var tebal;
+
+    if (nilai >= 10000000) {
+        tebal = 6,5;
+    }
+    else if (nilai >= 5000000) {
+        tebal = 4,5;
+    }
+    else if (nilai >= 1000000) {
+        tebal = 2,5;
+    }
+    else {
+        tebal = 0,5;
+    }
+
+    return {
+    color: "#0891b2",
+    weight: tebal,
+    opacity: 0.55
+};
+},
+
+    onEachFeature: function(feature, layer) {
+
+        layer.bindPopup(
+            "<h3 style='margin:0;'>Interaksi Kecamatan</h3>" +
+            "<hr>" +
+            "<b>Kecamatan Asal :</b> " +
+            feature.properties.WADMKC +
+            "<br>" +
+            "<b>Kecamatan Tujuan :</b> " +
+            feature.properties.Kecamatan_2 +
+            "<br>" +
+            "<b>Jarak :</b> " +
+            feature.properties.Dij +
+            " m" +
+            "<br>" +
+            "<b>Nilai Interaksi :</b> " +
+            Number(feature.properties.Interaksi)
+                .toLocaleString('id-ID')
+        );
+
+    layer.on({
+
+        mouseover: function(e) {
+            e.target.setStyle({
+                weight: e.target.options.weight + 2,
+                opacity: 1
+            });
+        },
+
+        mouseout: function(e) {
+            garis.resetStyle(e.target);
+        }
+
+    });
+
+}
+
+}).addTo(map2);
+
+map2.fitBounds(garis.getBounds());
+var legend2 = L.control({
+    position: 'bottomright'
+});
+
+legend2.onAdd = function () {
+
+    var div = L.DomUtil.create('div', 'legend');
+
+   div.innerHTML =
+    '<b>Legenda Interaksi</b><br><br>' +
+
+    '<div style="display:flex;align-items:center;margin-bottom:8px;">' +
+        '<div style="width:40px;height:2px;background:#0891b2;margin-right:10px;"></div>' +
+        '<span>Rendah</span>' +
+    '</div>' +
+
+    '<div style="display:flex;align-items:center;margin-bottom:8px;">' +
+        '<div style="width:40px;height:5px;background:#0891b2;margin-right:10px;"></div>' +
+        '<span>Sedang</span>' +
+    '</div>' +
+
+    '<div style="display:flex;align-items:center;">' +
+        '<div style="width:40px;height:8px;background:#0891b2;margin-right:10px;"></div>' +
+        '<span>Tinggi</span>' +
+    '</div>';
+
+    return div;
+};
+
+legend2.addTo(map2);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+        /* =====================
+           MAP 3
+           RANKING INTERAKSI
+        ===================== */
+
+        var map3 = L.map('map3').setView([-7.816, 112.011], 10);
+
+        L.tileLayer(
+            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            {
+                attribution: '&copy; OpenStreetMap &copy; CARTO'
+            }
+        ).addTo(map3);
+        var rankingData = {
+    "PARE": { ranking: 1, interaksi: 1187094790 },
+    "GURAH": { ranking: 2, interaksi: 865595009.8 },
+    "WATES": { ranking: 3, interaksi: 727413478.2 },
+    "PLOSOKLATEN": { ranking: 4, interaksi: 646999123.9 },
+    "KEPUNG": { ranking: 5, interaksi: 632868862.1 },
+    "NGADILUWIH": { ranking: 6, interaksi: 579064372.1 },
+    "MOJO": { ranking: 7, interaksi: 525930289.8 },
+    "PLEMAHAN": { ranking: 8, interaksi: 498500085.1 },
+    "PUNCU": { ranking: 9, interaksi: 494819794.4 },
+    "BADAS": { ranking: 10, interaksi: 409629478.1 },
+    "KRAS": { ranking: 11, interaksi: 409046446.9 },
+    "KANDAT": { ranking: 12, interaksi: 405258626.4 },
+    "NGASEM": { ranking: 13, interaksi: 400758499.6 },
+    "PAPAR": { ranking: 14, interaksi: 376958515.7 },
+    "TAROKAN": { ranking: 15, interaksi: 367882375.2 },
+    "GAMPENGREJO": { ranking: 16, interaksi: 360425489.3 },
+    "SEMEN": { ranking: 17, interaksi: 347235990.2 },
+    "PURWOASRI": { ranking: 18, interaksi: 343097041.6 },
+    "BANYAKAN": { ranking: 19, interaksi: 338677807.2 },
+    "GROGOL": { ranking: 20, interaksi: 335730274.8 },
+    "PAGU": { ranking: 21, interaksi: 317825001.1 },
+    "KANDANGAN": { ranking: 22, interaksi: 296910203.7 },
+    "NGANCAR": { ranking: 23, interaksi: 275389088.2 },
+    "RINGINREJO": { ranking: 24, interaksi: 256799959.4 },
+    "KAYEN KIDUL": { ranking: 25, interaksi: 248482294.2 },
+    "KUNJANG": { ranking: 26, interaksi: 207669954.6 }
+};
+fetch('data/Batas Administrasi Kediri.geojson')
+    .then(response => response.json())
+    .then(data => {
+
+        var batas3 = L.geoJSON(data, {
+
+            style: function(feature) {
+
+                var kec = feature.properties.Kecamatan;
+                var warna = "#e5e7eb";
+
+                if (kec === "PARE") {
+                    warna = "#991b1b";
+                }
+                else if (kec === "GURAH") {
+                    warna = "#ea580c";
+                }
+                else if (kec === "WATES") {
+                    warna = "#facc15";
+                }
+                else if (kec === "PLOSOKLATEN") {
+                    warna = "#84cc16";
+                }
+                else if (kec === "KEPUNG") {
+                    warna = "#22c55e";
+                }
+
+                return {
+                    color: "#64748b",
+                    weight: 1.5,
+                    fillColor: warna,
+                    fillOpacity: 0.75
+                };
+            },
+
+            onEachFeature: function(feature, layer) {
+
+                var kec = feature.properties.Kecamatan;
+                var kec = feature.properties.Kecamatan.toUpperCase();
+
+var info = rankingData[kec];
+
+var ranking = info.ranking;
+var interaksi = info.interaksi;
+
+                layer.bindPopup(
+    "<h3 style='margin:0;'>Ranking Interaksi</h3>" +
+    "<hr>" +
+
+    "<b>Kecamatan :</b> " +
+    kec +
+
+    "<br><br>" +
+
+    "<b>Peringkat :</b> " +
+    ranking +
+
+    "<br><br>" +
+
+    "<b>Nilai Interaksi :</b><br>" +
+    Number(interaksi).toLocaleString('id-ID')
+);
+layer.on({
+
+    mouseover: function (e) {
+        e.target.setStyle({
+            weight: 3,
+            fillOpacity: 0.9
+        });
+    },
+
+    mouseout: function (e) {
+        batas3.resetStyle(e.target);
+    }
+
+});
+
+            }
+
+        }).addTo(map3);
+
+        map3.fitBounds(batas3.getBounds());
+        var legend3 = L.control({
+    position: 'bottomright'
+});
+
+legend3.onAdd = function () {
+
+    var div = L.DomUtil.create('div', 'legend');
+
+    div.innerHTML =
+        '<b>Ranking Interaksi</b><br><br>' +
+
+        '<div style="display:flex;align-items:center;margin-bottom:6px;">' +
+        '<div style="width:18px;height:18px;background:#991b1b;margin-right:10px;"></div>' +
+        '<span>1. Pare</span>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin-bottom:6px;">' +
+        '<div style="width:18px;height:18px;background:#ea580c;margin-right:10px;"></div>' +
+        '<span>2. Gurah</span>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin-bottom:6px;">' +
+        '<div style="width:18px;height:18px;background:#facc15;margin-right:10px;"></div>' +
+        '<span>3. Wates</span>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;margin-bottom:6px;">' +
+        '<div style="width:18px;height:18px;background:#84cc16;margin-right:10px;"></div>' +
+        '<span>4. Plosoklaten</span>' +
+        '</div>' +
+
+        '<div style="display:flex;align-items:center;">' +
+        '<div style="width:18px;height:18px;background:#22c55e;margin-right:10px;"></div>' +
+        '<span>5. Kepung</span>' +
+        '</div>';
+
+    return div;
+};
+
+legend3.addTo(map3);
+
+    });
+    
+    </script>
+    
+    
+
+</body>
+
+</html>
